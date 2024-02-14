@@ -17,7 +17,14 @@ public class MediaProduct {
     }
     
     public MediaProduct() {
-        
+    	
+    }
+
+    public MediaProduct(String title, double price, int year, Genre genre) {
+        this.title = title;
+        this.price = price;
+        this.year = year;
+        this.genre = genre;
     }
 
 	public String getTitle() {
@@ -43,5 +50,12 @@ public class MediaProduct {
 	public void setYear(int year) {
 		this.year = year;
 	}
-    
+	
+	public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
 }
