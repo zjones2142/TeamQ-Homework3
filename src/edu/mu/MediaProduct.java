@@ -1,19 +1,21 @@
 package edu.mu;
 
 public class MediaProduct {
-	public String title;
+    public String title;
     public double price;
     public int year;
-    public enum genre {
-    	ROCK,
-    	POP,
-    	JAZZ,
-    	CLASSICAL,
-    	HIP_HOP,
-    	ELECTRONIC,
-    	CHILDREN
-    }
+    public Genre genre;
 
+    public enum Genre {
+        ROCK,
+        POP,
+        JAZZ,
+        CLASSICAL,
+        HIP_HOP,
+        ELECTRONIC,
+        CHILDREN
+    }
+    
     public MediaProduct() {
         
     }
