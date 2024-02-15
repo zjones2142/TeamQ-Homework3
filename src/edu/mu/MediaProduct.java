@@ -15,10 +15,6 @@ public class MediaProduct {
         ELECTRONIC,
         CHILDREN
     }
-    
-    public MediaProduct() {
-    	
-    }
 
     public MediaProduct(String title, double price, int year, Genre genre) {
         this.title = title;
