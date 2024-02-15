@@ -7,7 +7,7 @@ import java.util.List;
 public class StockManagerSingleton {
     private static StockManagerSingleton instance;
     private List<MediaProduct> inventory;
-    private String inventoryFilePath = "inventory.csv"; // Path to your CSV file
+    public final String inventoryFilePath = "inventory.csv"; // Path to your CSV file
 
     private StockManagerSingleton() {
         inventory = new ArrayList<>();
@@ -21,10 +21,11 @@ public class StockManagerSingleton {
     }
 
     public boolean initializeStock() {
-        
+    	return false;
     }
 
     public boolean updateItemPrice(MediaProduct product, double newPrice) {
+		return false;
         
     }
 
@@ -37,10 +38,12 @@ public class StockManagerSingleton {
     }
 
     public boolean saveStock() {
+		return false;
         
     }
     
     public ArrayList<MediaProduct> getMediaProductBelowPrice (int maxPrice) {
+		return null;
     	
     }
     
@@ -49,14 +52,17 @@ public class StockManagerSingleton {
     }
     
     public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList) {
+		return null;
     	
     }
     
     public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList) {
+		return null;
     	
     }
     
     public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList) {
+		return null;
     	
     }
 }
