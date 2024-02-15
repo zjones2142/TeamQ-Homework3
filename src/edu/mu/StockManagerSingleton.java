@@ -59,4 +59,5 @@ public class StockManagerSingleton {
     public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList) {
     	
     }
+    
 }
