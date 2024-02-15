@@ -9,7 +9,11 @@ public class StockManagerSingleton {
     private List<MediaProduct> inventory;
     public final String inventoryFilePath = "inventory.csv"; // Path to your CSV file
 
-    private StockManagerSingleton() {
+    
+    
+    
+  //TODO rb - vvvvvvvvvvvvvv
+    public StockManagerSingleton() {
         inventory = new ArrayList<>();
     }
 
@@ -23,7 +27,11 @@ public class StockManagerSingleton {
     public boolean initializeStock() {
     	return false;
     }
-
+    
+    
+    
+    
+  //TODO jm - vvvvvvvvvvvvvv
     public boolean updateItemPrice(MediaProduct product, double newPrice) {
 		return false;
         
@@ -36,7 +44,10 @@ public class StockManagerSingleton {
     public boolean removeItem(MediaProduct product) {
         return inventory.remove(product);
     }
-
+    
+    
+    
+    //TODO zj - vvvvvvvvvvvvvv
     public boolean saveStock() {
 		return false;
         
@@ -51,6 +62,8 @@ public class StockManagerSingleton {
     	
     }
     
+    
+    //TODO mj - vvvvvvvvvvvvvv
     public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList) {
 		return null;
     	
