@@ -2,11 +2,10 @@ package edu.mu;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 
 public class StockManagerSingleton {
     private static StockManagerSingleton instance;
-    private List<MediaProduct> inventory;
+    public ArrayList<MediaProduct> inventory;
     public final String inventoryFilePath = "inventory.csv"; // Path to your CSV file
     public final String path2 = "inventoryCopy.csv";
     
