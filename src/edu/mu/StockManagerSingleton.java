@@ -139,33 +139,85 @@ public class StockManagerSingleton {
     }
     
     
-    //TODO mj - vvvvvvvvvvvvvv
+  //TODO mj - vvvvvvvvvvvvvv
     public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList) {
 		
-    	//Creates ArrayList for VinylRecordProduct
-    	ArrayList<VinylRecordProduct> vinylRecords = new ArrayList<>();
+    	//Creates a resizeable ArrayList for VinylRecordProduct called vinylArray
+    	//This allows us to add to this array list indefinitely
+    	ArrayList<VinylRecordProduct> vinylArray = new ArrayList<>();
     	
-    
-    	for (MediaProduct mediaproduct : productList) {
+    	
+    	//for i = 0 if i is less than the size of the productList i++ essentially this iterates i until it reaches the max product size
+    	for (int i = 0; i < productList.size(); i++) {
     		
-    		if(mediaproduct instanceof VinylRecordProduct) {
+    		//MediaProduct product is set equal to the element at index ith for productlist array
+    		MediaProduct product = productList.get(i);
+    		
+    		//If product is a VinylReocrdProduct execute
+    		if(product instanceof VinylRecordProduct) {
     			
-    			VinylRecordProduct vinylproduct = (VinylRecordProduct) mediaproduct;
-    			vinylRecords.add(vinylproduct);
+    			//vinylproduct is initalized and set equal to typecasted product
+    			VinylRecordProduct vinylProduct = (VinylRecordProduct)product;
+    			
+    			//Then we add the product to the vinyl records array
+    			vinylArray.add(vinylProduct);
     		}
     	}
-    	//Returns the ArrayList vinylRecords
-    	return vinylRecords;
     	
+    	//Returns the ArrayList vinylArray
+    	return vinylArray;
     }
     
     public ArrayList<CDRecordProduct> getCDRecordsList(ArrayList<MediaProduct> productList) {
-		return null;
     	
+
+    	
+    	ArrayList<CDRecordProduct> cdArray = new ArrayList<>();
+    	
+    	
+    	for (int i = 0; i < productList.size(); i++) {
+    		
+    		
+    		MediaProduct product = productList.get(i);
+    		
+    		
+    		if(product instanceof CDRecordProduct) {
+    			
+    			
+    			CDRecordProduct cdProduct = (CDRecordProduct)product;
+    			
+    			
+    			cdArray.add(cdProduct);
+    		}
+    	}
+    	
+    	
+    	return cdArray;
     }
     
     public ArrayList<TapeRecordProduct> getTapeRecordList(ArrayList<MediaProduct> productList) {
-		return null;
+
     	
+    	ArrayList<TapeRecordProduct> tapeArray = new ArrayList<>();
+    	
+    	
+    	for (int i = 0; i < productList.size(); i++) {
+    		
+    		
+    		MediaProduct product = productList.get(i);
+    		
+    		
+    		if(product instanceof TapeRecordProduct) {
+    			
+    			
+    			TapeRecordProduct tapeProduct = (TapeRecordProduct)product;
+    			
+    			
+    			tapeArray.add(tapeProduct);
+    		}
+    	}
+    	
+    	
+    	return tapeArray;
     }
 }
