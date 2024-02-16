@@ -25,7 +25,49 @@ public class StockManagerSingleton {
     }
 
     public boolean initializeStock() {
-    	return false;
+    	try(BufferedReader br = new BufferedReader(new FileReader(inventoryFilePath))){
+        String line;
+        while((line = br.readLine()) != null) //iterate through all lines in the file
+        { 
+          if(line.startsWith("Type")) //skips headers
+          {
+            continue;
+          }
+          
+          String[] data = line.split(",");
+          String type = data[0];
+          String title = data[1];
+          double price = Double.parseDouble(data[2]);
+          int year = Integer.parseInt(data[3]);
+          Genre genre = Genre.valueOf(data[4]);
+
+          MediaProduct product = null;
+
+          switch(type)
+          {
+            case "CD":
+                    product = new CDRecordProduct(title, price, year, genre);
+                    break;
+                case "Vinyl":
+                    product = new VinylRecordProduct(title, price, year, genre);
+                    break;
+                case "Tape":
+                    product = new TapeRecordProduct(title, price, year, genre);
+                    break;
+                default:
+                    break;
+          }
+
+          if(product != null)
+          {
+            inventory.add(product);
+          }
+        }
+        return true;
+      } catch (IOException e) {
+        e.printStackTrace;
+        return false;
+      }
     }
     
     
