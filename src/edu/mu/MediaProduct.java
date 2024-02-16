@@ -54,4 +54,11 @@ public class MediaProduct {
     public void setGenre(Genre genre) {
         this.genre = genre;
     }
+    
+    public void printMediaProduct() {
+    	System.out.println("  Title: "+this.getTitle()+
+    			"\n  Price: $"+this.getPrice()+
+    			"\n  Year: "+this.getYear()+
+    			"\n  Genre: "+this.getGenre()+"\n");
+    }
 }

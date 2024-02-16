@@ -1,6 +1,6 @@
 package edu.mu;
 
-import java.io.*;
+//import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,19 +47,32 @@ public class StockManagerSingleton {
     
     
     
-    //TODO zj - vvvvvvvvvvvvvv
+    //TODO zj - vvvvvvvvvvvvvv 
     public boolean saveStock() {
+    	
 		return false;
-        
     }
     
     public ArrayList<MediaProduct> getMediaProductBelowPrice (int maxPrice) {
-		return null;
-    	
+    	ArrayList<MediaProduct> temp = new ArrayList<MediaProduct>();
+    	for(int i=0;i<inventory.size();i++) {
+    		if(inventory.get(i).price < maxPrice) {
+    			temp.add(i,inventory.get(i));
+    		}
+    	}
+    	if(temp.size() == 0) {
+    		System.out.println("No products at that price-point");
+    		return null;
+    	}
+    	else {
+    		return temp;
+    	}
     }
     
     public void printListOfMediaProduct(ArrayList<MediaProduct> productList) {
-    	
+    	for(int i=0;i<productList.size();i++) {
+    		productList.get(i).printMediaProduct();
+    	}
     }
     
     
