@@ -85,9 +85,29 @@ public class StockManagerSingleton {
     
     //TODO zj - vvvvvvvvvvvvvv 
     public boolean saveStock() {
-    	try(BufferedWriter fw = new BufferedWriter(new FileWriter(path2))) {
-    		
-    		fw.close();
+    	try(BufferedWriter bw = new BufferedWriter(new FileWriter(path2))) {
+    		//string constructor
+			String[] str = {""};
+    		for(int i=0;i<inventory.size();i++) {
+    			str[i] = inventory.get(i).getTitle()+","
+    					+Double.toString(inventory.get(i).getPrice())+","
+    					+Integer.toString(inventory.get(i).getYear())+","
+    					+Genre.toString(inventory.get(i).getGenre());
+    		}
+    		//file writing
+    		bw.write("Type,Title,Price,Year,Genre"+System.getProperty("line.separator"));
+    		for(int i=0;i<inventory.size();i++) {
+    			if(inventory.get(i) instanceof CDRecordProduct) {
+    				bw.write("CD,"+str[i]+System.getProperty("line.separator"));
+    			}
+    			else if (inventory.get(i) instanceof TapeRecordProduct) {
+    				bw.write("Tape,"+str[i]+System.getProperty("line.separator"));
+    			}
+    			else if (inventory.get(i) instanceof VinylRecordProduct) {
+    				bw.write("Vinyl,"+str[i]+System.getProperty("line.separator"));
+    			}
+    		}
+    		bw.close();
     		return true;
     	} catch(IOException e) {
     		e.printStackTrace();
