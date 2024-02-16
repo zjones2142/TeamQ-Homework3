@@ -6,16 +6,6 @@ public class MediaProduct {
     public int year;
     public Genre genre;
 
-    public enum Genre {
-        ROCK,
-        POP,
-        JAZZ,
-        CLASSICAL,
-        HIP_HOP,
-        ELECTRONIC,
-        CHILDREN
-    }
-
     public MediaProduct(String title, double price, int year, Genre genre) {
         this.title = title;
         this.price = price;
