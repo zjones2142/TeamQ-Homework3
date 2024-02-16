@@ -78,7 +78,21 @@ public class StockManagerSingleton {
     
     //TODO mj - vvvvvvvvvvvvvv
     public ArrayList<VinylRecordProduct> getVinylRecordList(ArrayList<MediaProduct> productList) {
-		return null;
+		
+    	//Creates ArrayList for VinylRecordProduct
+    	ArrayList<VinylRecordProduct> vinylRecords = new ArrayList<>();
+    	
+    
+    	for (MediaProduct mediaproduct : productList) {
+    		
+    		if(mediaproduct instanceof VinylRecordProduct) {
+    			
+    			VinylRecordProduct vinylproduct = (VinylRecordProduct) mediaproduct;
+    			vinylRecords.add(vinylproduct);
+    		}
+    	}
+    	//Returns the ArrayList vinylRecords
+    	return vinylRecords;
     	
     }
     
