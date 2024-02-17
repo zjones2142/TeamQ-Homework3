@@ -88,7 +88,7 @@ public class StockManagerSingleton {
     public boolean saveStock() {
     	try(BufferedWriter bw = new BufferedWriter(new FileWriter(path2))) {
     		//string constructor
-			String[] str = {""};
+			String[] str = new String[inventory.size()];
     		for(int i=0;i<inventory.size();i++) {
     			str[i] = inventory.get(i).getTitle()+","
     					+Double.toString(inventory.get(i).getPrice())+","
