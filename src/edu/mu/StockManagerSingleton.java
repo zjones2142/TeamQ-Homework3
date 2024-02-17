@@ -7,7 +7,7 @@ public class StockManagerSingleton {
     private static StockManagerSingleton instance;
     public ArrayList<MediaProduct> inventory;
     public final String inventoryFilePath = "inventory.csv"; // Path to your CSV file
-    public final String path2 = "inventoryCopy.csv";
+    //public final String path2 = "inventoryCopy.csv"; (used for testing)
     
     
     
@@ -89,7 +89,7 @@ public class StockManagerSingleton {
     
     //TODO zj - vvvvvvvvvvvvvv 
     public boolean saveStock() {
-    	try(BufferedWriter bw = new BufferedWriter(new FileWriter(path2))) {
+    	try(BufferedWriter bw = new BufferedWriter(new FileWriter(inventoryFilePath))) {
     		//string constructor
 			String[] str = new String[inventory.size()];
     		for(int i=0;i<inventory.size();i++) {
