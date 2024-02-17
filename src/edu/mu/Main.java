@@ -7,12 +7,12 @@ public class Main {
 		StockManagerSingleton stockmanager = new StockManagerSingleton();
 		Genre r = Genre.ROCK;
 		stockmanager.initializeStock();
-		System.out.println("BEFORE ADD***********************");
+		System.out.println("*******************BEFORE CHANGES*******************");
 		stockmanager.printListOfMediaProduct(stockmanager.inventory);
 		MediaProduct p = new MediaProduct("Test", 0.00, 9999, r);
 		stockmanager.addItem(p);
 		stockmanager.saveStock();
-		System.out.println("AFTER ADD************************");
+		System.out.println("*******************AFTER CHANGES*******************");
 		stockmanager.printListOfMediaProduct(stockmanager.inventory);
 	}
 }

@@ -68,17 +68,20 @@ public class StockManagerSingleton {
     
   //TODO jm - vvvvvvvvvvvvvv
     public boolean updateItemPrice(MediaProduct product, double newPrice) {
-    	
-		return false;
+    	product.setPrice(newPrice);
+    	if(product.getPrice() == newPrice) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
     }
 
     public boolean addItem(MediaProduct product) {
-    	
         return inventory.add(product);
     }
 
     public boolean removeItem(MediaProduct product) {
-    	
         return inventory.remove(product);
     }
     
